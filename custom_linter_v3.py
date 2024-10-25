@@ -14,7 +14,7 @@ def convert_notebook_to_script(notebook_path):
     return script
 
 
-def check_cyclomatic_complexity(file_content, file_path, max_complexity=10):
+def check_cyclomatic_complexity(file_content, file_path, max_complexity=1):
     print(f"Checking file: {file_path}")
     errors = 0
     tree = ast.parse(file_content)
@@ -84,7 +84,7 @@ def lint_file(file_path, max_line_length):
         file_content = convert_notebook_to_script(file_path)
     else:
         with open(file_path, 'r', encoding='utf-8') as file:
-            file_content = file.read()
+            file_content = file.read() 
     
     errors += check_cyclomatic_complexity(file_content, file_path)
     errors += check_long_functions(file_content, file_path, max_line_length)
