@@ -1,0 +1,5 @@
+git remote set-url origin https://github.com/Buksenitz/mlops_modulo_7_sesion_1.git
+git remote -v
+git add .
+git commit -m "test"
+git push origin main
